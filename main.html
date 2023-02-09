@@ -1,0 +1,158 @@
+  <div class="section-title" span="12">
+	<h5>All TV SHOWS</h5>
+		<span>Serch for show: <input type="text" ng-model="searchKey_3" style="color:black"></span>
+</div>
+  <div class="top-content">
+    <div class="container-fluid">
+        <div id="carousel-example_4" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3" ng-class="{active: $index == 0}" ng-repeat="tvshow in allShows | filter: searchKey_3">
+						<a ui-sref="showDetails({id:tvshow.id})">
+							<img ng-if="tvshow.image.medium" src="{{tvshow.image.medium}}" class="img-fluid mx-auto d-block" alt="img1">
+							<img ng-if="tvshow.image.medium==null" src="/img/noimage.jpg" class="img-fluid mx-auto d-block" alt="img1">
+							<div class="showdesc">
+								<strong>Name:</strong> 
+								<span>{{tvshow.name}}{{tvshow.id}}</span> 
+							</div>
+							<div class="showdesc">
+								<strong>Language:</strong> 
+								<span>{{tvshow.language}}</span> 
+							</div>
+							<div class="showdesc" ng-if="tvshow.rating.average">
+								<strong>Rating:</strong> 
+								<span>{{tvshow.rating.average}}</span> 
+							</div>
+						</a>
+					</div>
+				</a>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-example_4" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example_4" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="other-show-list-radius">
+	<div class="section-title" span="12">
+		<h5>Comedy Shows</h5>
+	</div>
+	<div class="top-content">
+		<div class="container-fluid">
+			<div id="carousel-example" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner row w-100 mx-auto" role="listbox">
+					
+						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3" ng-class="{active: $index == 0}" ng-repeat="tvshow in comedyShow | filter: searchKey_2">
+							<a ui-sref="showDetails({id:tvshow.id})">
+								<img src="{{tvshow.image.medium}}" class="img-fluid mx-auto d-block" alt="img1">
+								<div class="showdesc">
+									<strong>Name:</strong> 
+									<span>{{tvshow.name}}</span> 
+								</div>
+								<div class="showdesc">
+									<strong>Language:</strong> 
+									<span>{{tvshow.language}}</span> 
+								</div>
+								<div class="showdesc" ng-if="tvshow.rating.average">
+									<strong>Rating:</strong> 
+									<span>{{tvshow.rating.average}}</span> 
+								</div>
+							</a>
+						</div>
+					
+				</div>
+				<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="other-show-list">
+	<div class="section-title" span="12">
+		<h5>Action Shows</h5>
+	</div>
+	<div class="top-content">
+		<div class="container-fluid">
+			<div id="carousel-example_1" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner row w-100 mx-auto" role="listbox">
+					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3" ng-class="{active: $index == 0}" ng-repeat="tvshow in actionShow | filter: searchKey_1">
+						<a ui-sref="showDetails({id:tvshow.id})">	
+						<img src="{{tvshow.image.medium}}" class="img-fluid mx-auto d-block" alt="img1">
+							<div class="showdesc">
+								<strong>Name:</strong> 
+								<span>{{tvshow.name}}</span> 
+							</div>
+							<div class="showdesc">
+								<strong>Language:</strong> 
+								<span>{{tvshow.language}}</span> 
+							</div>
+							<div class="showdesc" ng-if="tvshow.rating.average">
+								<strong>Rating:</strong> 
+								<span>{{tvshow.rating.average}}</span> 
+							</div>
+						</a>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carousel-example_1" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carousel-example_1" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="other-show-list-radius-bottom">
+	<div class="section-title" span="12">
+		<h5>Adventure Shows</h5>
+	</div>
+	<div class="top-content">
+		<div class="container-fluid">
+			<div id="carousel-example_2" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner row w-100 mx-auto" role="listbox">
+					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3" ng-class="{active: $index == 0}" ng-repeat="tvshow in comedyShow | filter: searchKey | orderBy: tvshow.rating.average ">
+						<a ui-sref="showDetails({id:tvshow.id})">
+							<img src="{{tvshow.image.medium}}" class="img-fluid mx-auto d-block" alt="img1">
+							<div class="showdesc">
+								<strong>Name:</strong> 
+								<span>{{tvshow.name}}</span> 
+							</div>
+							<div class="showdesc">
+								<strong>Language:</strong> 
+								<span>{{tvshow.language}}</span> 
+							</div>
+							<div class="showdesc" ng-if="tvshow.rating.average">
+								<strong>Rating:</strong> 
+								<span>{{tvshow.rating.average}}</span> 
+							</div>
+						</a>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carousel-example_2" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carousel-example_2" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

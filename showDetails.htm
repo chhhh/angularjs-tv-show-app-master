@@ -1,0 +1,41 @@
+<div class="row-fluid" ng-if="!isError" ng-controller="showDetailsController" style="text-align: center;margin-top: -10px;margin-right: -10px;border: 1px solid white;">
+      <button type="button" class="btn btn-primary backbtn">Back</button> 
+      
+    <div style="border:1px solid; padding:10px;margin: 35px;background: black;">
+      <div class="span6"  style="display: inline-block;vertical-align: top;margin-right: 40px;">
+        <img src="{{singleShowDetails.image.medium}}" />
+    </div>
+     
+    <div class="span6" style="display: inline-block;text-align: left;">
+      <ul class="show-info">
+          <li><strong>Name:</strong> 
+              <span >{{singleShowDetails.name}}</span>
+          </li>
+          <li><strong>Language:</strong> 
+            <span >{{singleShowDetails.language}}</span>
+          </li>
+              <li><strong>Schedule:</strong> 
+                  <span ng-repeat="days in singleShowDetails.schedule.days">{{days}}</span>
+                  <span >{{singleShowDetails.schedule.time}}</span>
+              </li>
+              <li><strong>Network:</strong> 
+                  <span>{{singleShowDetails.network.country.name}}</span>
+                  <span >{{singleShowDetails.network.country.code}}</span>
+                  <span >{{singleShowDetails.network.country.timezone}}</span>
+                  </li>
+                  <li><strong>officialSite:</strong> 
+                    <span ><a href="{{singleShowDetails.officialSite}}">{{singleShowDetails.officialSite}}</a></span>
+                </li>
+              <li><strong>Genres:</strong> <span ng-repeat="genre in singleShowDetails.genres">{{genre}}<span ng-if="$index < singleShowDetails.genres.length-1">, </span></span>
+              </li>
+              <li><strong>Rating:</strong> 
+                  <span>{{singleShowDetails.rating.average}}</span>
+              </li>
+          </ul>
+    </div>
+    </div>      
+</div>
+
+<div class="row-fluid" style="text-align: center;" ng-if="isError">
+      <h1> Data not found for id: {{paramId}}</h1>
+</div>
