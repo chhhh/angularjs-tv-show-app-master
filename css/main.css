@@ -1,0 +1,324 @@
+@import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
+body {
+   background-color: #5dace9;
+}
+h1, h2, h3 {
+    font-family: 'Archivo Narrow', sans-serif;
+}
+.banner {
+    background-color: #0074cd;
+    color: #FFF;
+    height: 100px;
+}
+.banner h1 {
+    font-size: 50px;
+    line-height: 50px;
+}
+.main-frame {
+    background-color: #FFF;
+    padding: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+.search-box {
+    line-height: 50px;
+    background-color: #333;
+    color: #FFF;
+    margin-bottom: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+.search-box label {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.episode-list {
+    list-style: none;
+    margin: 0px;
+}
+
+.episode-list h3 {
+    margin-top: 0px;
+}
+
+.episode-list .ratings {
+    line-height: 30px;
+    text-align: center;
+    background-color: #333;
+    color: #FFF;
+    margin-top: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.episode-list .fulldate {
+    margin: 5px;
+}
+
+.episode-list li {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: dotted 1px #5dace9;
+    display:inline;
+}
+
+.episode-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.show-info {
+    list-style: none;
+    margin: 0px;
+    padding: 10px;
+    background-color: #e1e1e1;
+    color: #333;
+    font-size: 16px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    color:black;
+}
+
+.show-info li {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: solid 1px #CCC;
+    line-height: 40px;
+}
+
+.show-info li:last-child {
+    border-bottom: none;
+}
+
+.show-info .genre {
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.limit{
+	width: 500px;
+	max-width: 500px;
+	height: 250px;
+	
+	overflow-x: auto;
+}
+
+.content{
+	width: 2500px;
+	height: 50px;
+}
+
+.section-title
+{
+    background: #0074cd;
+    margin: 15px;
+    color: white;
+    padding: 5px 5px 4px 9px;
+}
+.section-title h2{
+    display: inline-block;
+ }
+ .section-title span{
+    float: right;
+    color: white;
+    font-size: 15px;
+    margin-top: -31px;
+ }
+
+ .main-filter{
+    margin: 0 0 0 30px;
+    font-size: 15px;
+ }
+ 
+ .other-show-list-radius{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 22px;
+    background: black;
+    padding:10px;
+ }
+ .other-show-list-radius-bottom{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: black;
+    padding:10px;
+ }
+ .other-show-list{
+    background: black;
+    padding:10px;
+ }
+
+ .showdesc{
+    font-size: 12px;
+    margin: 5px 0px 5px 15px;
+ }
+
+ .episode-list li {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+	margin-right: 10px;
+    border-bottom: dotted 1px #5dace9;
+    display:inline-flex;
+}
+/*
+    code by Iatek LLC 2018 - CC 2.0 License - Attribution required
+    code customized by Azmind.com
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Show 4th slide on md if col-md-4*/
+    .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    /* Show 3rd slide on sm if col-sm-6*/
+    .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -50%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) {
+    .carousel-item {
+        margin-right: 0;
+    }
+    /* show 2 items */
+    .carousel-inner .active + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+        transition: none;
+    }
+    .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* farthest right hidden item must be also positioned for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* MD */
+@media (min-width: 768px) {
+    /* show 3rd of 3 item slide */
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* LG */
+@media (min-width: 991px) {
+    /* show 4th item */
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    /* Show 5th slide on lg if col-lg-3 */
+    .carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -25%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* left or forward direction */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction //t - previous slide direction last item animation fix */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+
+.searchfilter{
+    padding:10px;
+}
+.banner columns{
+    padding:0px;
+}
+.backbtn{
+    padding: 4px 15px 4px 15px;
+    float: right;
+    margin-right: 35px;
+}
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: #0074cd;
+    color: white;
+  }
